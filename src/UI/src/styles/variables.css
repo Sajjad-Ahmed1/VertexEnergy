@@ -19,7 +19,7 @@
   /* ── Text ── */
   --text-primary:   #E6EDF3;   /* main content — off-white to reduce strain */
   --text-secondary: #8B949E;   /* secondary labels */
-  --text-muted:     #6E7681;   /* placeholders, disabled */
+  --text-muted:     #848D97;   /* placeholders, disabled — #848D97 yields ~5.1:1 on bg-surface, ~5.6:1 on bg-base (WCAG AA 4.5:1 compliant) */
   --text-inverse:   #0D1117;   /* text on light accent backgrounds */
 
   /* ── Semantic Alarm Colors (operational criticality) ── */

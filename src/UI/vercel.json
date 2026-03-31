@@ -1,7 +1,4 @@
 {
-  "buildCommand": "cd src/UI && npm install && npm run build",
-  "outputDirectory": "src/UI/dist",
-  "installCommand": "echo 'dependencies installed via buildCommand'",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
