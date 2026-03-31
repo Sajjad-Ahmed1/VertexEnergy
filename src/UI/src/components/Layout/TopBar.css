@@ -1,0 +1,96 @@
+.topbar {
+  height: var(--topbar-height);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0 var(--space-6);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.topbar__clock {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-right: var(--space-4);
+}
+
+.topbar__time {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+}
+
+.topbar__date {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.topbar__status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.topbar__icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.topbar__icon-btn:hover {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.topbar__icon-btn--alarm {
+  color: var(--warning);
+  border-color: var(--warning-border);
+}
+
+.topbar__notif {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--critical);
+  color: #fff;
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+.topbar__username {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.topbar__user-btn {
+  gap: var(--space-2);
+}

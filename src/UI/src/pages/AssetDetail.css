@@ -1,0 +1,162 @@
+.asset-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.asset-detail-notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-16);
+  text-align: center;
+}
+
+.asset-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.asset-detail-back:hover { color: var(--text-primary); }
+
+/* Header card */
+.asset-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.asset-detail-header__left {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+.asset-detail-header__icon { color: var(--telemetry); flex-shrink: 0; margin-top: 4px; }
+.asset-detail-header__id {
+  font-size: var(--text-xs);
+  color: var(--telemetry);
+  display: block;
+  margin-bottom: 2px;
+}
+.asset-detail-header__name {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
+}
+.asset-detail-header__loc {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-top: var(--space-1);
+}
+.asset-detail-header__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+.asset-detail-uptime {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+.asset-detail-uptime strong { color: var(--nominal); }
+
+/* Grid */
+.asset-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+@media (max-width: 900px) {
+  .asset-detail-grid { grid-template-columns: 1fr; }
+}
+
+.asset-detail-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+/* Tags */
+.asset-detail-tags {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.asset-detail-tag {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-muted);
+  border-left: 3px solid var(--border-muted);
+  border-radius: var(--radius-md);
+}
+.asset-detail-tag--critical { border-left-color: var(--critical); background: var(--critical-dim); }
+.asset-detail-tag--warning  { border-left-color: var(--warning);  background: var(--warning-dim);  }
+.asset-detail-tag--nominal  { border-left-color: var(--nominal);  }
+
+.asset-detail-tag__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: 1 / -1;
+}
+.asset-detail-tag__id { font-size: var(--text-xs); color: var(--text-muted); }
+.asset-detail-tag__value {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  line-height: 1;
+}
+.asset-detail-tag--critical .asset-detail-tag__value { color: var(--critical); }
+.asset-detail-tag--warning  .asset-detail-tag__value { color: var(--warning);  }
+.asset-detail-tag__unit {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-left: 4px;
+  font-weight: var(--font-normal);
+}
+.asset-detail-tag__name { font-size: var(--text-xs); color: var(--text-secondary); }
+
+/* Twin card */
+.asset-detail-twin-card {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.asset-detail-twin-card__icon { color: var(--telemetry); flex-shrink: 0; }
+.asset-detail-twin-card > div { flex: 1; }
+.asset-detail-twin-btn {
+  padding: var(--space-2) var(--space-5);
+  background: var(--telemetry-dim);
+  border: 1px solid var(--telemetry-border);
+  border-radius: var(--radius-md);
+  color: var(--telemetry);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+.asset-detail-twin-btn:hover {
+  background: var(--telemetry);
+  color: var(--text-inverse);
+}

@@ -1,0 +1,145 @@
+.asset-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.asset-table__title {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+.asset-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  table-layout: fixed;
+}
+
+.asset-table__table thead th {
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  border-bottom: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-muted);
+}
+
+/* Column widths — fixed so nothing overflows */
+.asset-table__table thead th:nth-child(1) { width: 100px; } /* Asset ID */
+.asset-table__table thead th:nth-child(2) { width: auto;   } /* Name — flexible */
+.asset-table__table thead th:nth-child(3) { width: 110px;  } /* Type */
+.asset-table__table thead th:nth-child(4) { width: 180px;  } /* Location */
+.asset-table__table thead th:nth-child(5) { width: 110px;  } /* Status */
+.asset-table__table thead th:nth-child(6) { width: 70px;   } /* Uptime */
+
+.asset-table__table tbody td {
+  padding: var(--space-3) var(--space-3);
+  border-bottom: 1px solid var(--border-muted);
+  color: var(--text-primary);
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.asset-table__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.asset-row {
+  transition: background var(--transition-fast);
+}
+.asset-row:hover {
+  background: var(--bg-subtle);
+}
+.asset-row--critical {
+  background: rgba(248, 81, 73, 0.05);
+}
+.asset-row--critical:hover {
+  background: rgba(248, 81, 73, 0.1);
+}
+.asset-row--warning {
+  background: rgba(227, 179, 65, 0.04);
+}
+
+.asset-table__link {
+  color: var(--telemetry);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  font-size: var(--text-xs);
+}
+.asset-table__link:hover {
+  text-decoration: underline;
+}
+
+.asset-table__name {
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.asset-table__location {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Type badge — simple pill, no circle */
+.asset-table__type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--info-dim);
+  color: var(--info);
+  border: 1px solid #1D4ED8;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Status badge — pill with dot */
+.asset-table__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.asset-table__status-badge--nominal {
+  background: var(--nominal-dim);
+  color: var(--nominal);
+  border: 1px solid var(--nominal-border);
+}
+.asset-table__status-badge--warning {
+  background: var(--warning-dim);
+  color: var(--warning);
+  border: 1px solid var(--warning-border);
+}
+.asset-table__status-badge--critical {
+  background: var(--critical-dim);
+  color: var(--critical);
+  border: 1px solid var(--critical-border);
+}
+
+.asset-table__uptime {
+  color: var(--nominal);
+  font-size: var(--text-sm);
+}
+
+.align-right {
+  text-align: right;
+}
